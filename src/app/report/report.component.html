@@ -1,3 +1,15 @@
-<p>
-  report works!
-</p>
+<div class='report-flex'>
+  <header>
+    <h1>Report Encounter</h1>
+    <p>Safety on Mars is your responsibility</p>
+  </header>
+  <form [formGroup]='reportForm' [ngClass]="{ invalid: reportForm.invalid }">
+      <select required formControlName="type" formControlName="type" name="type">
+        <option value="none">Select alien type </option>
+        <option *ngFor="let alien of alienType" value="{{alien.type}}">{{alien.type}}</option>>
+      </select>
+      <textarea placeholder="Action Text" (keyup)='getText($event)' formControlName="action" name="action">
+      </textarea>
+  </form>
+  <button (click)='logAlien()'>Submit Report</button>
+</div>

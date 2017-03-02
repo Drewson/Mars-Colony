@@ -28,14 +28,26 @@ export interface Alien {
 
 export class NewColonist {
     name: String;
-    job_id: Job;
+    job_id: string;
     age: String;
+    constructor(name: string, job_id: string, age: string){
+        this.name = name;
+        this.age = age;
+        this.job_id = job_id;
+    }
 }
 
-export class NewEncouner {
+export class NewEncounter {
     id: Number;
     date: String;
     colonist_id: Number;
     atype: String;
     action: String;
+    constructor(id: number, date: string, colonist_id: Number, atype: string, action: String){
+        this.id = id;
+        this.date = date;
+        this.colonist_id = colonist_id;
+        this.atype = atype;
+        this.action = action;
+    }
 }
