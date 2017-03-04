@@ -76,9 +76,9 @@ export class RegisterComponent implements OnInit {
     const colonistPostRequest = { colonist: newColonist };
  /* tslint:disable */
     this.colonistApiService.saveColonist( colonistPostRequest )
-        .subscribe((result) => {
-          localStorage.setItem('colonist_id', JSON.stringify(result.id));
-          console.log('Colonist was saved: ', result);
+        .subscribe((resultColonist) => {
+          localStorage.setItem('colonist_id', JSON.stringify(resultColonist.id));
+          console.log('Colonist was saved: ', resultColonist);
         });
         this.router.navigate(['encounter']);
     }

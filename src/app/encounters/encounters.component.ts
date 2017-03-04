@@ -13,10 +13,22 @@ import { EncountersAPIService } from '../apiService/encounters';
 export class EncountersComponent implements OnInit {
 
   encounterList: Encounter[];
+  reportedEncounter: Encounter;
 
   constructor(private encountersAPIService: EncountersAPIService,
               private router: Router) {
     this.getEncounters();
+    console.log(localStorage.getItem('NewReportedEncounter'));
+
+    this.reportedEncounter = {
+      "id": Number(localStorage.getItem('NewReportedID')),
+      "date": new Date().toLocaleDateString("en-US"),
+      "colonist_id": Number(localStorage.getItem('NewReportedCID')),
+      "atype": localStorage.getItem('NewReportedATYPE'),
+      "action": localStorage.getItem('NewReportedACTION')
+    }
+    
+    // console.log(this.reportedEncounter)
    }
 
   getEncounters(){
@@ -24,6 +36,7 @@ export class EncountersComponent implements OnInit {
     this.encountersAPIService.getEncounters()
         .subscribe((result) => {
           this.encounterList = result;
+          this.encounterList.unshift(this.reportedEncounter);
         });
   }
 

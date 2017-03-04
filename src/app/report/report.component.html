@@ -3,9 +3,9 @@
     <h1>Report Encounter</h1>
     <p>Safety on Mars is your responsibility</p>
   </header>
-  <form [formGroup]='reportForm' [ngClass]="{ invalid: reportForm.invalid }" (ngSubmit)='postNewEncounter($event)'>
-      <select formControlName="atype" name="atype">
-        <option value="none">Select alien type </option>
+  <form [formGroup]='reportForm' [ngClass]="{ invalid: reportForm.invalid }"  (ngSubmit)='postNewEncounter($event)'>
+      <select formControlName="atype" name="atype" [ngClass]="{ 'submitRed' : flashRed }">
+        <option selected='selected' required value="none">Select alien type </option>
         <option *ngFor="let alien of alienType" value="{{alien.id}}">{{alien.type}}</option>>
       </select>
       <textarea placeholder="Action Text" (keyup)='getText($event)' formControlName="action" name="action">
