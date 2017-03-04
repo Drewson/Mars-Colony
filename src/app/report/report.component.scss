@@ -54,15 +54,19 @@
             outline: none;
             border-radius: 0;
         }
+
+        button {
+            align-self: center;
+            margin: 0 auto;
+            flex-basis: 20%;
+            font-weight: 100;
+            font-size: 36px;
+            color: white;
+            background-color: black;
+            height: 20vh;
+            border: 0;
+        }
     }
 
-    button {
-        flex-basis: 20%;
-        font-weight: 100;
-        font-size: 36px;
-        color: white;
-        background-color: black;
-        height: 20vh;
-        border: 0;
-    }
+    
 }

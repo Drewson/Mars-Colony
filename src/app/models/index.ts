@@ -38,13 +38,11 @@ export class NewColonist {
 }
 
 export class NewEncounter {
-    id: Number;
     date: String;
     colonist_id: Number;
     atype: String;
     action: String;
-    constructor(id: number, date: string, colonist_id: Number, atype: string, action: String){
-        this.id = id;
+    constructor( date: string, colonist_id: Number, atype: string, action: String){
         this.date = date;
         this.colonist_id = colonist_id;
         this.atype = atype;

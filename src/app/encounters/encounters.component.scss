@@ -9,7 +9,7 @@
     header {
         flex-basis: 100%;
         text-align: center;
-        height: 20vh;
+        height: 15vh;
 
         h1 {
             font-weight: 100;
@@ -18,19 +18,24 @@
         }
 
         p {
-            margin-top: 0;
-            padding-top: 0;
+            margin: 0;
+            padding: 0;
         }
+        
     }
 
     ul {
         text-decoration: none;
-        margin: 0 10px;
-        padding: 0;
+        margin: 0;
+        padding: 0 20px;
         list-style: none;
         flex-basis: 100%;
-        height: 55vh;
+        height: 60vh;
         overflow: scroll;
+
+        li{
+            padding: 10px 0;
+        }
     }
 
     button {

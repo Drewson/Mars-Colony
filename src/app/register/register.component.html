@@ -1,15 +1,14 @@
 <div class='register-flex'>
   <h1>Register</h1>
-  <form [formGroup]="registerForm">
+  <form [formGroup]="registerForm" (ngSubmit)='postNewColonist($event)'>
 
-      <input type="text" placeholder="Name" required formControlName="name" name="name" [ngClass]="{ 'submitRed' : flashRed }">
+      <input type="text" placeholder="Name" formControlName="name" name="name" [ngClass]="{ 'submitRed' : flashRed }">
       <input type="number" placeholder="Age" formControlName="age" name="age" [ngClass]="{ 'submitRed' : flashRed }">
-      <select required formControlName="job_id" name="job_id" [ngClass]="{ 'submitRed' : flashRed }">
+      <select formControlName="job_id" name="job_id" [ngClass]="{ 'submitRed' : flashRed }">
         <option value="none">Select occupation</option>
         <option *ngFor="let job of marsJobs" value="{{job.id}}">{{job.name}}</option>
       </select>
-      
+      <button type="submit">Check In</button>
   </form>
-  <button (click)='postNewColonist()'>Check In</button>
 
 </div>

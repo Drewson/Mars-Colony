@@ -4,7 +4,7 @@
     <p>Seen an Alien? Report it!</p>
   </header>
   <ul>
-    <li>Test Item bla bla bla bla hello world goodbye mars</li>
+    <li *ngFor="let encounter of encounterList" value="{{encounter.atype}}">{{encounter.date}} - {{encounter.atype}}<br>{{encounter.action}}</li>
   </ul>
-  <button>Report Encounter</button>
+  <button (click)='navigateLink()'>Report Encounter</button>
 </div>

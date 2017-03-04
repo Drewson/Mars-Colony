@@ -1,23 +1,32 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { NewColonist, Job} from '../models';
 import {FormGroup, FormControl, FormBuilder, Validators, ValidatorFn, AbstractControl} from '@angular/forms';
 
 import { JOBS_URL, COLONIST_URL } from '../models/API'
+import { ColonistAPIService } from '../apiService/colonist';
+import { JobsAPIService } from '../apiService/jobs';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
+  providers: [ColonistAPIService, JobsAPIService ]
 })
 export class RegisterComponent implements OnInit {
 
   newColonist: NewColonist;
+
   marsJobs: Job[];
   registerForm: FormGroup;
   flashRed: boolean;
 
-  constructor() {
-    // TODO: call API, get jobs.
+  constructor( private colonistApiService: ColonistAPIService,
+                private jobsAPIService: JobsAPIService,
+                private router: Router ) {
+    
+                  
+    this.getMarsJobs();
 
     this.registerForm = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.maxLength(100)]),
@@ -27,7 +36,6 @@ export class RegisterComponent implements OnInit {
 
     this.flashRed = false;
 
-    this.getMarsJobs();
   }
 
 
@@ -46,11 +54,37 @@ export class RegisterComponent implements OnInit {
 
 
   getMarsJobs(){
-    console.log('Getting...Jobs');
+    
+    this.jobsAPIService.getMarsJobs()
+        .subscribe((result) => {
+          this.marsJobs = result;
+        });
   }
 
-  postNewColonist(){
-    console.log('Posting...colonist');
+  postNewColonist(event){
+    event.preventDefault();
+    
+    if(this.registerForm.invalid){
+      //the form is invalid
+      // return;
+    }else {
+    const name = this.registerForm.get('name').value;
+    const age = this.registerForm.get('age').value;
+    const job_id = this.registerForm.get('job_id').value;
+
+    const newColonist = new NewColonist(name, job_id, age);
+    const colonistPostRequest = { colonist: newColonist };
+ /* tslint:disable */
+    this.colonistApiService.saveColonist( colonistPostRequest )
+        .subscribe((result) => {
+          localStorage.setItem('colonist_id', JSON.stringify(result.id));
+          console.log('Colonist was saved: ', result);
+        });
+        this.router.navigate(['encounter']);
+    }
+
+    console.log(this.registerForm);
+
     this.flashRed = true;
   }
 
