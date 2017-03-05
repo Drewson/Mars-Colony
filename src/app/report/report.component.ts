@@ -57,7 +57,7 @@ export class ReportComponent implements OnInit {
 
     } else {
 
-      const date = new Date().toLocaleDateString("en-US");
+      const date = new Date().toISOString().substring(0,10);
       const colonist_id = localStorage.getItem('colonist_id');
       const atype = this.reportForm.get('atype').value;
       const action = this.reportForm.get('action').value;
@@ -67,11 +67,6 @@ export class ReportComponent implements OnInit {
       this.encountersApiService.saveEncounter(encounterPostRequest)
         .subscribe((resultEncounter) => {
           console.log('Encounter was saved: ', resultEncounter);
-          localStorage.setItem('NewReportedEncounter', JSON.stringify(resultEncounter));
-          localStorage.setItem('NewReportedCID', JSON.stringify(resultEncounter.colonist_id));
-          localStorage.setItem('NewReportedATYPE', JSON.stringify(resultEncounter.atype));
-          localStorage.setItem('NewReportedACTION', JSON.stringify(resultEncounter.id));
-          localStorage.setItem('NewReportedACTION', JSON.stringify(resultEncounter.action));
         });
 
       this.router.navigate(['encounter'])
