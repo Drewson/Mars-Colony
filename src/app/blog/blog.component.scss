@@ -1,0 +1,63 @@
+@import '../theme';
+
+.blog-flex {
+    display: flex;
+    // flex-direction: column;
+    font-weight: 100;
+    font-size: 18px;
+    flex-wrap: wrap;
+
+    h2 {
+        text-decoration: underline;
+    }
+
+
+    header {
+        flex-basis: 100%;
+        text-align: center;
+        height: 15vh;
+        color: white;
+        background-color: $marsRed;
+
+        h1 {
+            font-weight: 100;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+        
+    }
+
+    ul {
+        text-decoration: none;
+        margin: 0;
+        padding: 0 20px;
+        list-style: none;
+        flex-basis: 100%;
+        height: 80vh;
+        overflow: scroll;
+
+        li{
+            padding: 10px 0;
+        }
+    }
+
+    a {
+        text-align: center;
+        margin: 0;
+        padding: 10px!important;
+        font-weight: 100;
+        font-size: 34px;
+        padding: 0 25%;
+        color: white;
+        background-color: $marsRed;
+        flex-basis: 100vw;
+        height: 10vh;
+        border: 0;
+    }
+
+}

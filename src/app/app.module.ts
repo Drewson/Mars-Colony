@@ -9,6 +9,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { RegisterComponent } from './register/register.component';
 import { EncountersComponent } from './encounters/encounters.component';
 import { ReportComponent } from './report/report.component';
+import { BlogComponent } from './blog/blog.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 
 const routes: Routes = [ 
@@ -16,7 +17,9 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'report', component: ReportComponent},
   { path: 'encounter', component: EncountersComponent},
-  { path: 'notfound', component: NotfoundComponent}
+  { path: 'blog', component: BlogComponent},
+  { path: '**', component: NotfoundComponent}
+  
 ]
 
 
@@ -27,7 +30,8 @@ const routes: Routes = [
     RegisterComponent,
     EncountersComponent,
     ReportComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,

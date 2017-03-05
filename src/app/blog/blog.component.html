@@ -1,0 +1,12 @@
+<div class="blog-flex">
+  <header>
+    <h1>Space Blog</h1>
+    <p>Space News 24/7!</p>
+  </header>
+  <ul>
+    <li *ngFor="let post of blogList" value="{{post.title}}">
+      <h2>{{post.title.rendered}}</h2>
+      {{htmlToPlaintext(post.excerpt.rendered).substring(0, post.excerpt.rendered.length - 18)}}...</li>
+  </ul>
+  <a href="http://localhost:4200">Back</a>
+</div>

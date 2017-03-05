@@ -65,8 +65,7 @@ export class RegisterComponent implements OnInit {
     event.preventDefault();
     
     if(this.registerForm.invalid){
-      //the form is invalid
-      // return;
+      this.flashRed = true;
     }else {
     const name = this.registerForm.get('name').value;
     const age = this.registerForm.get('age').value;
@@ -85,7 +84,7 @@ export class RegisterComponent implements OnInit {
 
     console.log(this.registerForm);
 
-    this.flashRed = true;
+    
   }
 
 

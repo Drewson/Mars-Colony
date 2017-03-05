@@ -54,7 +54,6 @@ export class ReportComponent implements OnInit {
 
     if (this.reportForm.invalid) {
       this.flashRed = true;
-
     } else {
 
       const date = new Date().toISOString().substring(0,10);
