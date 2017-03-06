@@ -1,27 +1,28 @@
 # MarsColony
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.0.
+Dynamically fills each page with content, gotten from an Ajax request,
+in the form of JSON, using angular.
+Both GET and POST were used.
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Tools used
+- Angular
+- TypeScript
+- SASS
 
-## Code scaffolding
+# Stretch Goals Implemented
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+- Saved the Colonist_id created from the register page, to localHost. Then use that
+    same Colonist_id when reporting a new encounter.
 
-## Build
+- Created a blog page, filled from the wordpress Mars site.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+# Learning Outcomes
 
-## Running unit tests
+I learned how easily angular binds the html and javascript together. It really makes
+the development process simpler to figure out, compared to jquery. The syntax was
+also very minimal, which was awesome.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+This project helped solidify a lot of the javascript I had already learned. Coming out
+of it, I feel more confident that I actually understand what I'm doing.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+![alt tag](src/app/images/readmeScreenShot.png)

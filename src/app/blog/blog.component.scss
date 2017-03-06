@@ -7,11 +7,6 @@
     font-size: 18px;
     flex-wrap: wrap;
 
-    h2 {
-        text-decoration: underline;
-    }
-
-
     header {
         flex-basis: 100%;
         text-align: center;
@@ -43,6 +38,7 @@
 
         li{
             padding: 10px 0;
+            border-bottom: 2px solid black;
         }
     }
 
