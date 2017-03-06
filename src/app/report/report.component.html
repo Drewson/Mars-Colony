@@ -5,7 +5,7 @@
   </header>
   <form [formGroup]='reportForm' [ngClass]="{ invalid: reportForm.invalid }"  (ngSubmit)='postNewEncounter($event)'>
       <select formControlName="atype" name="atype" [ngClass]="{ 'submitRed' : flashRed }">
-        <option selected='selected' required value="none">Select alien type </option>
+        <option required value="none">Select alien type </option>
         <option *ngFor="let alien of alienType" value="{{alien.type}}">{{alien.type}}</option>>
       </select>
       <textarea placeholder="Action Text" (keyup)='getText($event)' formControlName="action" name="action">

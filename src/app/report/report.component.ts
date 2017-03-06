@@ -32,7 +32,7 @@ export class ReportComponent implements OnInit {
 
 
     this.reportForm = new FormGroup({
-      atype: new FormControl('', [Validators.required]),
+      atype: new FormControl('none', [Validators.required]),
       action: new FormControl('', [Validators.required]),
     });
   }
