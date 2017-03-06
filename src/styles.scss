@@ -15,15 +15,14 @@ body {
 .loadPage {
     width: 100%;
     height: 800px;
-    background-color: $marsRed;
 
     span {
-        color: black;
+        color: white;
         text-align: center;
         display: inline;
         animation: loader 1.5s infinite;
         font-size: 30px;
-        background-color: white;
+        background-color: $marsRed;
     }
 }
 
